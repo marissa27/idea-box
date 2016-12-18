@@ -2,18 +2,17 @@
 function CreateIdea (title, body) {
   this.title = title;
   this.body = body;
-  console.log('hi')
   }
 
-// Creates idea content and html
+var i = 1;
 function ideaContent(createIdea) {
-  $( ".stored" ).prepend(
-    `<article class="ideas">
-      <h5 contenteditable>${createIdea.title}</h5>
-      <p contenteditable>${createIdea.body}</p>
-      <button><</button><p></p><button>></button>`
-  );
-}
+  $("<article />", { "class":"ideas", id:"idea"+i })
+     .prepend(`<h5 contenteditable>${createIdea.title}</h5>
+     <p contenteditable>${createIdea.body}</p>
+     <button><</button><button>></button><p>Quality:</p><p class="quality"></p>`)
+     .prependTo($(".stored"));
+  i++;
+};
 
 // Sets idea in motion from user input and btn click
 $( ".save-btn" ).click(function() {
@@ -21,5 +20,4 @@ $( ".save-btn" ).click(function() {
   var body = $( ".body" ).val();
   var createIdea = new CreateIdea(title, body);
   ideaContent(createIdea);
-  console.log('hello')
 });
