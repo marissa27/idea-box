@@ -5,14 +5,14 @@ body {
 header {
   background-color: #E5F3F2;
   text-align: center;
-  padding-top: 5%;
+  padding-top: 5.5%;
 }
 
 h1 {
   color: #6D6E71;
   display: inline-block;
   font-family: 'Roboto Slab', serif;
-  font-size: 1.5em;
+  font-size: 1.8em;
 }
 
 h5 {
@@ -40,19 +40,27 @@ p {
 }
 
 .title, .body {
-  font-size: 1em;
-  border: 1px solid #939598;
+  font-size: 1.2em;
+  border: 1px solid #D1D3D4;
   width: 90%;
   margin-top: 3%;
+}
+
+.body {
+  height: 100px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  padding-left: 1%;
 }
 
 .save-btn {
   color: #FFF;
   background-color: #00A79D;
-  font-family: 'Roboto Slab', serif;
+  padding: 2% 0;
   border-style: none;
   width: 90%;
-  margin-top: 3%;
+  margin-top: 5%;
   font-size: 1em;
 }
 
@@ -69,4 +77,20 @@ p {
 .article {
   border-bottom: 1px solid #D1D3D4;
   width: 95%;
+}
+
+.search {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+
+.search-input {
+  color: #FFF;
+  padding: 2% 0;
+  border-style: none;
+  width: 90%;
+  margin-top: 5%;
+  font-size: 1em;
+  border: 1px solid #D1D3D4;
 }

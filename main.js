@@ -29,6 +29,7 @@ $( ".save-btn" ).click(function() {
   var body = $( ".body" ).val();
   var idea = new CreateIdea(title, body);
   ideaContent(idea);
+  resetInputFields();
   localStorage.setItem(idea.id, JSON.stringify(idea));
 });
 
@@ -55,3 +56,9 @@ $( '.stored' ).on('click', '.down', function() {
       qualityType.text('swill');
     }
 })
+
+//resets input fields to placeholder values
+function resetInputFields() {
+  $( ".title" ).val('');
+  $( ".body" ).val('');
+}
