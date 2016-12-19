@@ -17,7 +17,7 @@ function ideaContent(createIdea) {
   $(".stored").prepend(`<article class="article" id="${createIdea.id}"><h5 contenteditable>${createIdea.title}</h5><button class="delete-btn">D</button>
      <p contenteditable>${createIdea.body}</p>
      <button class="up">UP</button>
-     <button class="down"></button>
+     <button class="down">Down</button>
      <p class="quality">Quality:</p>
      <p class="type">${createIdea.quality}</p>
      </article>`)
@@ -34,6 +34,8 @@ $( ".save-btn" ).click(function() {
 
 $('.stored').on('click', '.delete-btn', function(){
   $(this).closest('.article').remove();
+  var idKey = $(this).closest('.article').attr('id');
+  localStorage.removeItem(idKey);
 })
 
 $( '.stored' ).on('click', '.up', function() {

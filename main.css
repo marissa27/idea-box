@@ -29,7 +29,6 @@ p {
 
 .idea {
   color: #00A79D;
-  border-bottom: 1px solid #D1D3D4;
 }
 
 .main {
@@ -65,4 +64,9 @@ p {
 
 .icon {
   width: 20px;
+}
+
+.article {
+  border-bottom: 1px solid #D1D3D4;
+  width: 95%;
 }
