@@ -23,7 +23,7 @@ h5 {
 }
 
 p {
-  color: #939598;
+  color: #6D6E71;
   font-size: .9em;
 }
 
@@ -64,6 +64,10 @@ p {
   font-size: 1em;
 }
 
+.save-btn:hover {
+  background-color: #045E55;
+}
+
 .stored {
   display: flex;
   flex-direction: column;
@@ -74,7 +78,7 @@ p {
   width: 20px;
 }
 
-.article {
+.card {
   border-bottom: 1px solid #D1D3D4;
   width: 95%;
 }
@@ -86,11 +90,15 @@ p {
 }
 
 .search-input {
-  color: #FFF;
+  color: black;
   padding: 2% 0;
   border-style: none;
   width: 90%;
   margin-top: 5%;
   font-size: 1em;
   border: 1px solid #D1D3D4;
+}
+
+.quality {
+  font-family: 'Roboto Slab', serif;
 }
