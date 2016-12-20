@@ -5,9 +5,20 @@ $(document).ready(function(){
     }
 })
 
+$('.title, .body').on('keyup', function(){
+  var title = $('.title');
+  var body = $('.body');
+  var saveBtn = $('.save-btn');
+  if(!title.val() || !body.val()) {
+    saveBtn.prop('disabled', true);
+  } else {
+    saveBtn.prop('disabled', false);
+  }
+})
+
 $('.search-input').on('keyup', function(){
  var searchTerm = $(this).val().toLowerCase();
- $('h5').each(function (index, element) {
+ $('.searchField').each(function (index, element) {
    var text = $(element).text().toLowerCase();
    var match = !!text.match(searchTerm);
    $(this).parent().toggle(match);
@@ -25,6 +36,7 @@ function CreateIdea (title, body, id) {
 function ideaContent(createIdea) {
   $(".stored").prepend(
     `<article class="card" id="${createIdea.id}">
+      <div class="searchField">
       <h5 class ="title search-bar" contenteditable>${createIdea.title}</h5>
       <button class="delete-btn">D</button>
       <h5 class="body search-bar" contenteditable>${createIdea.body}</h5>
@@ -32,6 +44,7 @@ function ideaContent(createIdea) {
       <button class="down">Down</button>
       <p class="quality">Quality:</p>
       <p class="quality-type search-bar">${createIdea.quality}</p>
+      </div>
     </article>`)
    };
 

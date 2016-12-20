@@ -68,6 +68,10 @@ p {
   background-color: #045E55;
 }
 
+.save-btn:disabled {
+  background-color: #D1D3D4;
+}
+
 .stored {
   display: flex;
   flex-direction: column;
