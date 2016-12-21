@@ -5,6 +5,7 @@ $(document).ready(function(){
     }
 })
 
+// Save Disabled or Enabled
 $('.title, .body').on('keyup', function(){
   var title = $('.title');
   var body = $('.body');
@@ -27,7 +28,7 @@ function CreateIdea (title, body, id) {
 function ideaContent(createIdea) {
   $(".stored").prepend(
     `<article class="card" id="${createIdea.id}">
-      <h5 class ="title search-bar" contenteditable>${createIdea.title}</h5>
+      <p class ="title search-bar" contenteditable>${createIdea.title}</p>
       <button class="delete-btn card-btn icon"></button>
       <p class="body search-bar" contenteditable>${createIdea.body}</p>
       <button class="up card-btn icon"></button>
@@ -62,6 +63,7 @@ $( ".save-btn" ).click(function() {
   localStorage.setItem(idea.id, JSON.stringify(idea));
 });
 
+// Stores if User Edits Cards
 $('.stored').on('blur', '.title', function(){
   var getNewTitle = $(this).closest('.card').find('.title');
   var getNewTitleText = getNewTitle.text();
@@ -80,12 +82,14 @@ $('.stored').on('blur', '.body', function(){
   localStorage.setItem(idKey, JSON.stringify(storeBody));
 })
 
+// Delete Button
 $('.stored').on('click', '.delete-btn', function(){
   $(this).closest('.card').remove();
   var idKey = $(this).closest('.card').attr('id');
   localStorage.removeItem(idKey);
 })
 
+// Qualities
 $( '.stored' ).on('click', '.up', function() {
   var qualityType = $(this).siblings('.quality-type');
   upVote(qualityType);
@@ -132,6 +136,6 @@ function resetInputFields() {
 //  $('.searchField').each(function (index, element) {
 //    var text = $(element).text().toLowerCase();
 //    var match = !!text.match(searchTerm);
-//    $(this).parents().toggle(match);
+//    $(this).parent().toggle(match);
 //  })
 // });
