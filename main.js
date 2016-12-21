@@ -5,14 +5,16 @@ $(document).ready(function(){
     }
 })
 
-$('.search-input').on('keyup', function(){
- var searchTerm = $(this).val().toLowerCase();
- $('h5').each(function (index, element) {
-   var text = $(element).text().toLowerCase();
-   var match = !!text.match(searchTerm);
-   $(this).parent().toggle(match);
- })
-});
+$('.title, .body').on('keyup', function(){
+  var title = $('.title');
+  var body = $('.body');
+  var saveBtn = $('.save-btn');
+  if(!title.val() || !body.val()) {
+    saveBtn.prop('disabled', true);
+  } else {
+    saveBtn.prop('disabled', false);
+  }
+})
 
 // Creates idea properties
 function CreateIdea (title, body, id) {
@@ -26,14 +28,29 @@ function ideaContent(createIdea) {
   $(".stored").prepend(
     `<article class="card" id="${createIdea.id}">
       <h5 class ="title search-bar" contenteditable>${createIdea.title}</h5>
-      <button class="delete-btn">D</button>
-      <h5 class="body search-bar" contenteditable>${createIdea.body}</h5>
-      <button class="up">UP</button>
-      <button class="down">Down</button>
+      <button class="delete-btn card-btn icon"></button>
+      <p class="body search-bar" contenteditable>${createIdea.body}</p>
+      <button class="up card-btn icon"></button>
+      <button class="down card-btn icon"></button>
       <p class="quality">Quality:</p>
       <p class="quality-type search-bar">${createIdea.quality}</p>
     </article>`)
    };
+
+// function ideaContent(createIdea) {
+//   $(".stored").prepend(
+//     `<article class="card" id="${createIdea.id}">
+//       <div class="searchField">
+//       <h5 class ="title search-bar" contenteditable>${createIdea.title}</h5>
+//       <button class="delete-btn card-btn icon"></button>
+//       <p class="body search-bar" contenteditable>${createIdea.body}</p>
+//       <button class="up card-btn icon"></button>
+//       <button class="down card-btn icon"></button>
+//       <p class="quality">Quality:</p>
+//       <p class="quality-type search-bar">${createIdea.quality}</p>
+//       </div>
+//     </article>`)
+//    };
 
 // Sets idea in motion from user input and btn click
 $( ".save-btn" ).click(function() {
@@ -109,3 +126,12 @@ function resetInputFields() {
   $( ".title" ).val('');
   $( ".body" ).val('');
 }
+
+// $('.search-input').on('keyup', function(){
+//  var searchTerm = $(this).val().toLowerCase();
+//  $('.searchField').each(function (index, element) {
+//    var text = $(element).text().toLowerCase();
+//    var match = !!text.match(searchTerm);
+//    $(this).parents().toggle(match);
+//  })
+// });
