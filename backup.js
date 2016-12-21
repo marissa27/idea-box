@@ -27,7 +27,7 @@ function CreateIdea (title, body, id) {
 function ideaContent(createIdea) {
   $(".stored").prepend(
     `<article class="card" id="${createIdea.id}">
-      <p class ="title search-bar" contenteditable>${createIdea.title}</p>
+      <h5 class ="title search-bar" contenteditable>${createIdea.title}</h5>
       <button class="delete-btn card-btn icon"></button>
       <p class="body search-bar" contenteditable>${createIdea.body}</p>
       <button class="up card-btn icon"></button>
