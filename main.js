@@ -29,13 +29,13 @@ function ideaContent(createIdea) {
   $(".stored").prepend(
     `<article class="card" id="${createIdea.id}">
       <div class="searchField">
-      <h5 class ="title search-bar" contenteditable>${createIdea.title}</h5>
-      <button class="delete-btn card-btn icon"></button>
-      <p class="body search-bar" contenteditable>${createIdea.body}</p>
-      <button class="up card-btn icon"></button>
-      <button class="down card-btn icon"></button>
-      <p class="quality">Quality:</p>
-      <p class="quality-type search-bar">${createIdea.quality}</p>
+        <h5 class ="title search-bar" contenteditable>${createIdea.title}</h5>
+        <button class="delete-btn card-btn icon"></button>
+        <p class="body search-bar" contenteditable>${createIdea.body}</p>
+        <button class="up card-btn icon"></button>
+        <button class="down card-btn icon"></button>
+        <p class="quality">Quality:</p>
+        <p class="quality-type search-bar">${createIdea.quality}</p>
       </div>
     </article>`)
    };
